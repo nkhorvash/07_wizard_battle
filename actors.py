@@ -24,6 +24,21 @@ class Wizard(Creature):
 
         if my_roll >= creature_roll:
             print("The wizard has handily triumphed over the {}".format(creature.name))
+            self.level = self.level + creature.level
+            print('Our hero has now reached level {}.'.format(self.level))
+            if 300 > self.level >= 200:
+                self.level = self.level + 200
+                print()
+                print('LEVEL UP!!!')
+                print('Through great effort and experience, our hero has unlocked a power hidden within himself.')
+                print('You are now Gandolf the Knower of Secrets of level {}.'.format(self.level))
+            elif 800 > self.level >= 700:
+                self.level = self.level + 300
+                print()
+                print('LEVEL UP')
+                print("The hero's path is long and treacherous, and you have triumphed over many evils.")
+                print("Chief among them, you have slain the beast of your own fear and trembling.")
+                print("You have become Gandolf the Fearless of level {}".format(self.level))
             return True
         else:
             print("The wizard has been DEFEATED!!!")

@@ -1,5 +1,4 @@
 import time
-
 from actors import Wizard, Creature, SmallAnimal, Dragon
 import random
 
@@ -18,10 +17,17 @@ def print_header():
 def game_loop():
 
     creatures = [
-        SmallAnimal('Toad', 1),
+        SmallAnimal('Toad', 2),
         Creature('Tiger', 13),
-        SmallAnimal('Bat', 3),
-        Dragon('Dragon', 50, 75, True),
+        SmallAnimal('Bat', 5),
+        Creature('Minotaur', 50),
+        Creature('Python', 20),
+        Creature('Gargoyle', 35),
+        Creature('Skeleton Warrior', 65),
+        Creature('Dark Knight', 60),
+        Dragon('Wyvern', 80, 0, False),
+        Dragon('Fiery Dragon', 50, 25, True),
+        Dragon('Hard Scaled Dragon', 65, 100, False),
         Wizard('Evil Wizard', 1000)
     ]
 
@@ -55,7 +61,12 @@ def game_loop():
 
 
         if not creatures:
-            print("You've defeated all the creatures, well done!")
+            print()
+            print()
+            print("You have defeated creature after creature, and now, with the fall of the Evil Wizard, ")
+            print("you have cut off the head of the great evil gripping this land!")
+            print()
+            print("Well done!!!")
             break
 
         print()
