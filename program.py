@@ -7,15 +7,16 @@ def main():
     print_header()
     game_loop()
 
+
 def print_header():
     print('-----------------------------------')
     print('         Wizard Battle')
     print('-----------------------------------')
     print()
+    print()
 
 
 def game_loop():
-
     creatures = [
         SmallAnimal('Toad', 2),
         Creature('Tiger', 13),
@@ -30,14 +31,14 @@ def game_loop():
         Dragon('Hard Scaled Dragon', 65, 100, False),
         Wizard('Evil Wizard', 1000)
     ]
-
-    hero = Wizard('Gandolf', 75)
-
+    hero_name = input("You have entered a land filled with danger, who dares step foreward? ")
+    hero = Wizard(hero_name, 10000)
 
     while True:
 
         active_creature = random.choice(creatures)
-        print('A {} of level {} has appeared from a dark and foggy forest...'.format(active_creature.name, active_creature.level))
+        print('A {} of level {} has appeared from a dark and foggy forest...'.format(active_creature.name,
+                                                                                     active_creature.level))
         print()
 
         cmd = input('Do you [a]ttack, [r]un away, or [l]ook around? ')
@@ -59,14 +60,15 @@ def game_loop():
             print('OK, exiting game... bye!')
             break
 
-
         if not creatures:
             print()
             print()
-            print("You have defeated creature after creature, and now, with the fall of the Evil Wizard, ")
+            print("You have defeated creature after creature, and with the fall of the Evil Wizard, ")
             print("you have cut off the head of the great evil gripping this land!")
             print()
             print("Well done!!!")
+            print()
+            print()
             break
 
         print()

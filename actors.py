@@ -31,14 +31,14 @@ class Wizard(Creature):
                 print()
                 print('LEVEL UP!!!')
                 print('Through great effort and experience, our hero has unlocked a power hidden within himself.')
-                print('You are now Gandolf the Knower of Secrets of level {}.'.format(self.level))
+                print('You are now {} the Knower of Secrets of level {}.'.format(self.name, self.level))
             elif 800 > self.level >= 700:
                 self.level = self.level + 300
                 print()
                 print('LEVEL UP')
                 print("The hero's path is long and treacherous, and you have triumphed over many evils.")
                 print("Chief among them, you have slain the beast of your own fear and trembling.")
-                print("You have become Gandolf the Fearless of level {}".format(self.level))
+                print("You have become {} the Fearless of level {}".format(self.name, self.level))
             return True
         else:
             print("The wizard has been DEFEATED!!!")
