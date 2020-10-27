@@ -31,8 +31,9 @@ def game_loop():
         Dragon('Hard Scaled Dragon', 65, 100, False),
         Wizard('Evil Wizard', 1000)
     ]
+    evil_wizard = creatures[-1]
     hero_name = input("You have entered a land filled with danger, who dares step foreward? ")
-    hero = Wizard(hero_name, 10000)
+    hero = Wizard(hero_name, 75)
 
     while True:
 
@@ -60,13 +61,21 @@ def game_loop():
             print('OK, exiting game... bye!')
             break
 
-        if not creatures:
+        if evil_wizard not in creatures:
             print()
+            print()
+            print("The Evil Wizard slumps to the floor. A final gasp escapes his darkened hood.")
+            staff = input("The legendary Staff of Ages lies on the floor beside him, what should you do? [g]et or [d]estroy ")
+            if staff == 'g':
+                print("You claim the staff for your own, he certainly won't be using it anymore.")
+                print("Staff in hand, it's power courses through you. What wonders you might achieve with such a gift!")
+            elif staff == 'd':
+                print("You conjur a mistic blue flame and destroy the Staff of Ages so it's power will never fall into the wrong hands again.")
             print()
             print("You have defeated creature after creature, and with the fall of the Evil Wizard, ")
             print("you have cut off the head of the great evil gripping this land!")
             print()
-            print("Well done!!!")
+            print("Well done {}!!!".format(hero.name))
             print()
             print()
             break

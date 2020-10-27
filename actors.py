@@ -23,7 +23,7 @@ class Wizard(Creature):
         print('The {} rolls {}...'.format(creature.name, creature_roll))
 
         if my_roll >= creature_roll:
-            print("The wizard has handily triumphed over the {}".format(creature.name))
+            print("{} has handily triumphed over the {}".format(self.name, creature.name))
             self.level = self.level + creature.level
             print('Our hero has now reached level {}.'.format(self.level))
             if 300 > self.level >= 200:
